@@ -68,9 +68,9 @@ function Comp({ id, elType, text, x, y, fontSize = 16, fontWeight = 400, setSele
     }
 
     const handleKeyDown = (e) => {
-        if (e.code.toLowerCase() === 'delete') {
+        if (e.code.endsWith('Delete') || e.code.endsWith('Backspace')) {
             deleteComponent(id)
-        } else if (e.code.toLowerCase() === 'enter') {
+        } else if (e.code.endsWith('Enter')) {
             editComponent({ id, elType, text, fontSize, fontWeight, x: currentX, y: currentY })
         }
     }
